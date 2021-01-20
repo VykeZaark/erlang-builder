@@ -1,5 +1,5 @@
 
 ## Build docker image
-docker build -t ghcr.io/VykeZaark/erlang-builder .
+docker build -t ghcr.io/vykezaark/erlang-builder .
 ## push to repo
-docker push ghcr.io/VykeZaark/erlang-builder
+docker push ghcr.io/vykezaark/erlang-builder
