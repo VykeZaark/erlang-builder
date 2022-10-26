@@ -1,16 +1,20 @@
-name: Publish Docker image
-on: [push]
+name: Build and publish docker image
+
+on:
+  push:
+    tags:
+    - "*" # Running this workflow for any tag
 
 jobs:
-  build-and-publish-latest:
+  build-and-publish-tag:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' # Running this job only for master branch
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2.5.0 # Checking out the repo
 
-    - name: Build and Publish latest Docker image
-      uses: VaultVulp/gp-docker-action@1.1.7
+    - name: Build and publish tagged docker image
+      uses: VaultVulp/gp-docker-action@1.2.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
         image-name: erlang-builder
+        extract-git-tag: true # Provide flag to extract Docker image tag from git reference        
