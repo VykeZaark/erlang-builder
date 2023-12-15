@@ -14,7 +14,7 @@ RUN yum makecache && yum install -y epel-release https://repo.ius.io/ius-release
   make \
   which \
   rpm-build \
-  git224
+  git236
 
 RUN wget -O otp.rpm https://github.com/rabbitmq/erlang-rpm/releases/download/v26.1.2/erlang-26.1.2-1.el7.x86_64.rpm && \
     rpm -ivh otp.rpm && rm otp.rpm
