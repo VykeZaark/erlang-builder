@@ -1,5 +1,7 @@
 FROM centos:7
 
+LABEL org.opencontainers.image.source=https://github.com/VykeZaark/erlang-builder
+
 RUN yum makecache && yum install -y epel-release https://repo.ius.io/ius-release-el7.rpm && yum install -y \
   autoconf \
   gcc \
