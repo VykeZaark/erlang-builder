@@ -18,10 +18,10 @@ RUN yum makecache && yum install -y epel-release https://repo.ius.io/ius-release
   rpm-build \
   git236
 
-RUN wget -O otp.rpm https://github.com/rabbitmq/erlang-rpm/releases/download/v26.1.2/erlang-26.1.2-1.el7.x86_64.rpm && \
+RUN wget -O otp.rpm https://github.com/rabbitmq/erlang-rpm/releases/download/v23.3.4.18/erlang-23.3.4.18-1.el7.x86_64.rpm && \
     rpm -ivh otp.rpm && rm otp.rpm
 
-RUN wget https://github.com/erlang/rebar3/releases/download/3.22.1/rebar3 && mv rebar3 /usr/bin && chmod +x /usr/bin/rebar3
+RUN wget https://github.com/erlang/rebar3/releases/download/3.20.0/rebar3 && mv rebar3 /usr/bin && chmod +x /usr/bin/rebar3
 
 ENV PATH="/usr/bin:${PATH}"
 
